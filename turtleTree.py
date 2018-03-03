@@ -13,7 +13,7 @@ def tree(branchLen,t):
 
         angle1 = random.randint(5, 35)
         angle2 = random.randint(5, 35)
-        baseLength = int(65 - 20*downardness(heading) - 20*inwardness(x, heading))
+        baseLength = int(65 - 25*downardness(heading) - 15*inwardness(x, heading))
         newLength = branchLen*random.randint(baseLength-20, max(baseLength + 20, 100))/100
         newLength2 = branchLen*random.randint(baseLength-20, max(baseLength + 20, 100))/100
 
