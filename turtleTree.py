@@ -10,11 +10,13 @@ def tree(branchLen,t):
         t.pensize((branchLen/10)**1.25)
         t.color(setcolor(branchLen))
         t.forward(branchLen)
+
         angle1 = random.randint(5, 35)
         angle2 = random.randint(5, 35)
-        base = int(65 - 20*downardness(heading) - 20*inwardness(x, heading))
-        newLength = branchLen*random.randint(base-20, max(base + 20, 100))/100
-        newLength2 = branchLen*random.randint(base-20, max(base + 20, 100))/100
+        baseLength = int(65 - 20*downardness(heading) - 20*inwardness(x, heading))
+        newLength = branchLen*random.randint(baseLength-20, max(baseLength + 20, 100))/100
+        newLength2 = branchLen*random.randint(baseLength-20, max(baseLength + 20, 100))/100
+
         t.right(angle1)
         tree(newLength,t)
         t.left(angle1 + angle2)
