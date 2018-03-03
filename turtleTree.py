@@ -32,13 +32,12 @@ def setcolor(branchLen):
 def downardness(heading):
     return int(abs(heading) > 90)
 
-def upwardness(heading):
-    return int( not downardness(heading))
 def outwardness(x, heading):
     if heading != 0:
         return int(np.sign(x)*np.sign(heading) > 0)
     else:
         return 1
+
 def inwardness(x, heading):
     return int(not outwardness(x, heading))
 
@@ -46,7 +45,6 @@ def main():
     t = turtle.Turtle()
     turtle.mode("logo")
     myWin = turtle.Screen()
-    # t.left(90)
     t.up()
     t.backward(200)
     t.down()
