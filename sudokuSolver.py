@@ -35,46 +35,48 @@ def check_validity(puzzle, i_check = [], j_check = []):
                     return False
         return True
 
-
-    # check if rows, columns are valid
-    for i in range(9):
-        row = [False]*9
-        col = [False]*9
+    # # check if rows, columns are valid
+    # for i in range(9):
+    #     row = [False]*9
+    #     col = [False]*9
         
-        # check rows
-        for j in range(9):
-            if puzzle[i][j]-1 < 0 :
-                continue
-            elif row[puzzle[i][j]-1] == False:
-                row[puzzle[i][j]-1] = True
-            else:
-                return False
-        # check cols
-        for j in range(9):
-            if puzzle[j][i]-1 < 0 :
-                continue
-            elif col[puzzle[j][i]-1] == False:
-                col[puzzle[j][i]-1] = True
-            else:
-                return False
-        # check squares
-        for k in range(3):
-            sqr = [False]*9
-            for i in range(0 + 3*k, 3 + 3*k):
-                for j in range(0 + 3*k, 3 + 3*k):
-                    if puzzle[i][j] - 1 < 0:
-                        continue
-                    elif sqr[puzzle[i][j] - 1] == False:
-                        sqr[puzzle[i][j] - 1] = True
-                    else:
-                        return False
-    return True
+    #     # check rows
+    #     for j in range(9):
+    #         if puzzle[i][j]-1 < 0 :
+    #             continue
+    #         elif row[puzzle[i][j]-1] == False:
+    #             row[puzzle[i][j]-1] = True
+    #         else:
+    #             return False
+    #     # check cols
+    #     for j in range(9):
+    #         if puzzle[j][i]-1 < 0 :
+    #             continue
+    #         elif col[puzzle[j][i]-1] == False:
+    #             col[puzzle[j][i]-1] = True
+    #         else:
+    #             return False
+    #     # check squares
+    #     for k in range(3):
+    #         sqr = [False]*9
+    #         for i in range(0 + 3*k, 3 + 3*k):
+    #             for j in range(0 + 3*k, 3 + 3*k):
+    #                 if puzzle[i][j] - 1 < 0:
+    #                     continue
+    #                 elif sqr[puzzle[i][j] - 1] == False:
+    #                     sqr[puzzle[i][j] - 1] = True
+    #                 else:
+    #                     return False
+    # return True
     
 def solver(puzzle):
     ''' Solves sudoku puzzle using brute force search.
 
     <puzzle> is a 9x9 matrix.
-    Blank squares are indicated with zeros'''
+    Blank squares are indicated with zeros
+    
+    It is assumed that a solution exists and that the 
+    input puzzle is valid'''
 
     # Check each square withouth a number
     for i in range(9):
@@ -162,5 +164,32 @@ standard_puzzle = [[5, 3, 0, 0, 7, 0, 0, 0, 0], \
     [0, 0, 0, 4, 1, 9, 0, 0, 5], \
     [0, 0, 0, 0, 8, 0, 0, 7, 9]]
 
-solver(standard_puzzle)
-print(standard_puzzle)
+# solver(standard_puzzle)
+# print(standard_puzzle)
+
+puzzle_2 = [
+    [0, 0, 0, 2, 6, 0, 7, 0, 1],\
+    [6, 8, 0, 0, 7, 0, 0, 9, 0],\
+    [1, 9, 0, 0, 0, 4, 5, 0, 0],\
+    [8, 2, 0, 1, 0, 0, 0, 4, 0],\
+    [0, 0, 4, 6, 0, 2, 9, 0, 0],\
+    [0, 5, 0, 0, 0, 3, 0, 2, 8],\
+    [0, 0, 9, 3, 0, 0, 0, 7, 4],\
+    [0, 4, 0, 0, 5, 0, 0, 3, 6],\
+    [7, 0, 3, 0, 1, 8, 0, 0, 0]
+]
+solver(puzzle_2)
+print(puzzle_2)
+
+puzzle_3 = [[0, 2, 0, 0, 0, 0, 0, 0, 0],\
+            [0, 0, 0, 6, 0, 0, 0, 0, 3],\
+            [0, 7, 4, 0, 8, 0, 0, 0, 0],\
+            [0, 0, 0, 0, 0, 3, 0, 0, 2],\
+            [0, 8, 0, 0, 4, 0, 0, 1, 0],\
+            [6, 0, 0, 5, 0, 0, 0, 0, 0],\
+            [0, 0, 0, 0, 1, 0, 7, 8, 0],\
+            [5, 0, 0, 0, 0, 9, 0, 0, 0],\
+            [0, 0, 0, 0, 0, 0, 0, 4, 0]]
+
+solver(puzzle_3)
+print(puzzle_3)
