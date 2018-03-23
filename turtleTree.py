@@ -13,9 +13,9 @@ def tree(branchLen,t):
 
         angle1 = random.randint(5, 35)
         angle2 = random.randint(5, 35)
-        baseLength = int(65 - 25*downardness(heading) - 15*inwardness(x, heading))
-        newLength = branchLen*random.randint(baseLength-20, max(baseLength + 20, 100))/100
-        newLength2 = branchLen*random.randint(baseLength-20, max(baseLength + 20, 100))/100
+        baseLength = int(65 - 30*downardness(heading) - 15*inwardness(x, heading))
+        newLength = branchLen*random.randint(baseLength-10, max(baseLength + 10, 100))/100
+        newLength2 = branchLen*random.randint(baseLength-10, max(baseLength + 10, 100))/100
 
         t.right(angle1)
         tree(newLength,t)
@@ -48,7 +48,7 @@ def main():
     turtle.mode("logo")
     myWin = turtle.Screen()
     t.up()
-    t.backward(200)
+    t.backward(400)
     t.down()
     t.color("green")
     t.speed(10)
