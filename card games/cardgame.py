@@ -126,7 +126,7 @@ class Blackjack:
             elif self.get_hand_value(self.player) > 21:
                 print('You bust!')
             elif self.get_hand_value(self.dealer) > 21:
-                print('Dealer busts!')
+                print('You win! Dealer busts.')
             elif self.get_hand_value(self.dealer) > self.get_hand_value(self.player):
                 print('Dealer wins!')
             elif self.get_hand_value(self.dealer) < self.get_hand_value(self.player):
