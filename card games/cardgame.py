@@ -111,7 +111,7 @@ class Blackjack:
                 if move == 'h':
                     self.hit(self.player)
                     print('({}) '.format(self.get_hand_value(self.player)) + str(self.player.hand))
-                    if self.get_hand_value(self.player) > 21:
+                    if self.get_hand_value(self.player) >= 21:
                         break
             
             # Then dealer plays until stand or bust
