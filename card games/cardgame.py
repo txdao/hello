@@ -111,7 +111,10 @@ class Blackjack:
                     print(self.get_hand_value(self.player))
             
             # Then dealer plays until stand or bust
-
+            while self.get_hand_value(self.dealer) < 16:
+                self.hit(self.dealer)
+            print('Dealer has {}.'.format(self.dealer.hand))
+            print(self.get_hand_value(self.dealer))
 
             # compute score
             if self.get_hand_value(self.player) > 21 and self.get_hand_value(self.dealer) > 21:
