@@ -99,7 +99,7 @@ class Blackjack:
             self.deck.shuffle()
             self.deal_cards()
             print('Dealer shows {}'.format(self.dealer.hand[0]))
-            print(str(self.player.hand) + '({})'.format(self.get_hand_value(self.player)))
+            print('({}) '.format(self.get_hand_value(self.player)) + str(self.player.hand))
             # Check for blackjack
 
 
@@ -109,15 +109,14 @@ class Blackjack:
                 move = input('[1] hit, [2] stand: ')
                 if move == '1':
                     self.hit(self.player)
-                    print(str(self.player.hand) + '({})'.format(self.get_hand_value(self.player)))
+                    print('({}) '.format(self.get_hand_value(self.player)) + str(self.player.hand))
                     if self.get_hand_value(self.player) > 21:
                         break
             
             # Then dealer plays until stand or bust
             while self.get_hand_value(self.dealer) < 16:
                 self.hit(self.dealer)
-            print('Dealer has {}.'.format(self.dealer.hand))
-            print(self.get_hand_value(self.dealer))
+            print('Dealer has ({}) {}.'.format(self.get_hand_value(self.dealer), self.dealer.hand))
 
             # compute score
             if self.get_hand_value(self.player) > 21 and self.get_hand_value(self.dealer) > 21:
