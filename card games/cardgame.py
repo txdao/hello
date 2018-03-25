@@ -99,16 +99,19 @@ class Blackjack:
             self.deck.shuffle()
             self.deal_cards()
             print('Dealer shows {}'.format(self.dealer.hand[0]))
-            print(self.player.hand)
-            print(self.get_hand_value(self.player))
+            print(str(self.player.hand) + '({})'.format(self.get_hand_value(self.player)))
+            # Check for blackjack
+
+
             # ask player to make a move until stand or bust
             move = ''
             while move != '2':
                 move = input('[1] hit, [2] stand: ')
                 if move == '1':
                     self.hit(self.player)
-                    print(self.player.hand)
-                    print(self.get_hand_value(self.player))
+                    print(str(self.player.hand) + '({})'.format(self.get_hand_value(self.player)))
+                    if self.get_hand_value(self.player) > 21:
+                        break
             
             # Then dealer plays until stand or bust
             while self.get_hand_value(self.dealer) < 16:
