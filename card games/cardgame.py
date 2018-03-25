@@ -76,6 +76,9 @@ class Blackjack:
         hand = player.hand
         value1 = 0
         value2 = 0
+        if player.hand[0].rank == 1 and player.hand[1].rank == 1:
+            return 12
+            
         for card in player.hand:
             if card.rank > 10:
                 value1 += 10
