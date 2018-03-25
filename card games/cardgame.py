@@ -104,8 +104,6 @@ class Blackjack:
             self.deal_cards()
             print('Dealer shows {}'.format(self.dealer.hand[0]))
             print('({}) '.format(self.get_hand_value(self.player)) + str(self.player.hand))
-            # Check for blackjack
-
 
             # ask player to make a move until stand or bust
             move = 'h'
