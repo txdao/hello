@@ -114,7 +114,18 @@ class Blackjack:
 
 
             # compute score
-
+            if self.get_hand_value(self.player) > 21 and self.get_hand_value(self.dealer) > 21:
+                print('Both of you bust!')
+            elif self.get_hand_value(self.player) > 21:
+                print('You bust!')
+            elif self.get_hand_value(self.dealer) > 21:
+                print('Dealer busts!')
+            elif self.get_hand_value(self.dealer) > self.get_hand_value(self.player):
+                print('Dealer wins!')
+            elif self.get_hand_value(self.dealer) < self.get_hand_value(self.player):
+                print('You win!')
+            else:
+                print('It\'s a tie!')
             # ask player to play again
             self.reset()
             play = input('Play again? y/n: ')
