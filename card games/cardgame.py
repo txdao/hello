@@ -104,10 +104,10 @@ class Blackjack:
 
 
             # ask player to make a move until stand or bust
-            move = ''
-            while move != '2':
-                move = input('[1] hit, [2] stand: ')
-                if move == '1':
+            move = 'h'
+            while move =='h' and self.get_hand_value(self.player) < 21 :
+                move = input('[h]it, [s]tand: ')
+                if move == 'h':
                     self.hit(self.player)
                     print('({}) '.format(self.get_hand_value(self.player)) + str(self.player.hand))
                     if self.get_hand_value(self.player) > 21:
