@@ -65,6 +65,7 @@ class Blackjack:
     def reset(self):
         self.player.hand = []
         self.dealer.hand = []
+        self.deck = Deck()
         pass
 
     def hit(self, player):
